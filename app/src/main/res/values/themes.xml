@@ -11,6 +11,8 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
         <!-- Customize your theme here. -->
     </style>
 
@@ -21,5 +23,13 @@
 
     <style name="Textview.Bold" parent="Textview">
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppTheme.Splash" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowBackground">@drawable/splash_window_background</item>
     </style>
 </resources>

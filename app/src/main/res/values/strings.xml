@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">FundatecHeroTI22</string>
     <string name="button_2">Botão 2</string>
+    <string name="e_mail">E-mail</string>
+    <string name="password">Senha</string>
+    <string name="login">Login</string>
+    <string name="new_here">Novo por aqui?</string>
 </resources>

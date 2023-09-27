@@ -19,6 +19,7 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_FundatecHeroTI22)
         setContentView(R.layout.activity_home)
 
         observerState(HomeViewState.Error("Mensagem de erro"))
