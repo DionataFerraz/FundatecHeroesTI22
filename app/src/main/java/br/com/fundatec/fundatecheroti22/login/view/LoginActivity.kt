@@ -12,6 +12,7 @@ import br.com.fundatec.fundatecheroti22.profile.view.ProfileActivity
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
+    private val viewModel: LoginViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,11 +22,18 @@ class LoginActivity : AppCompatActivity() {
 
         configButtonLogin()
         configNewHereButton()
+
+        viewModel.email.observe(this) { showEmailError(it) }
+        viewModel.password.observe(this) { showPasswordError(it) }
     }
 
     private fun configButtonLogin() {
         binding.btLogin.setOnClickListener {
-            startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
+            viewModel.validateInputs(
+                binding.email.text.toString(),
+                binding.password.text.toString()
+            )
+//            startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
         }
     }
 
@@ -33,6 +41,14 @@ class LoginActivity : AppCompatActivity() {
         binding.tvNewHere.setOnClickListener {
             startActivity(Intent(this@LoginActivity, ProfileActivity::class.java))
         }
+    }
+
+    private fun showEmailError(errorMessage: String) {
+        binding.email.error = errorMessage
+    }
+
+    private fun showPasswordError(errorMessage: String) {
+        binding.password.error = errorMessage
     }
 
 }
