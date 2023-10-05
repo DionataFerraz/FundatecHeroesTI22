@@ -3,23 +3,20 @@ package br.com.fundatec.fundatecheroti22.login.presentation
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import br.com.fundatec.fundatecheroti22.login.presentation.model.LoginViewState
 
 class LoginViewModel : ViewModel() {
 
-    private val emailState: MutableLiveData<String> = MutableLiveData()
-    val email: LiveData<String> = emailState
-
-    private val passwordState: MutableLiveData<String> = MutableLiveData()
-    val password: LiveData<String> = passwordState
+    private val viewState: MutableLiveData<LoginViewState> = MutableLiveData()
+    val state: LiveData<LoginViewState> = viewState
 
     fun validateInputs(email: String?, password: String?) {
         if (email.isNullOrBlank()) {
-            emailState.value = "Digite um email valido"
+            viewState.value = LoginViewState.ShowEmailError
         }
 
         if (password.isNullOrBlank()) {
-            passwordState.value = "Digite uma senha valida"
+            viewState.value = LoginViewState.ShowPasswordError
         }
-
     }
 }

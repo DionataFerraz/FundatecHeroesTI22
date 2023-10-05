@@ -8,6 +8,7 @@ import br.com.fundatec.fundatecheroti22.R
 import br.com.fundatec.fundatecheroti22.databinding.ActivityLoginBinding
 import br.com.fundatec.fundatecheroti22.home.view.HomeActivity
 import br.com.fundatec.fundatecheroti22.login.presentation.LoginViewModel
+import br.com.fundatec.fundatecheroti22.login.presentation.model.LoginViewState
 import br.com.fundatec.fundatecheroti22.profile.view.ProfileActivity
 
 class LoginActivity : AppCompatActivity() {
@@ -23,8 +24,17 @@ class LoginActivity : AppCompatActivity() {
         configButtonLogin()
         configNewHereButton()
 
-        viewModel.email.observe(this) { showEmailError(it) }
-        viewModel.password.observe(this) { showPasswordError(it) }
+        viewModel.state.observe(this) {
+            when (it) {
+                is LoginViewState.Success -> TODO()
+                is LoginViewState.Error -> TODO()
+                LoginViewState.Loading -> TODO()
+                LoginViewState.ShowEmailError ->
+                    showEmailError()
+                LoginViewState.ShowPasswordError ->
+                    showPasswordError()
+            }
+        }
     }
 
     private fun configButtonLogin() {
@@ -33,7 +43,6 @@ class LoginActivity : AppCompatActivity() {
                 binding.email.text.toString(),
                 binding.password.text.toString()
             )
-//            startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
         }
     }
 
@@ -43,12 +52,12 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun showEmailError(errorMessage: String) {
-        binding.email.error = errorMessage
+    private fun showEmailError() {
+        binding.email.error = getString(R.string.email_error)
     }
 
-    private fun showPasswordError(errorMessage: String) {
-        binding.password.error = errorMessage
+    private fun showPasswordError() {
+        binding.password.error = getString(R.string.password_error)
     }
 
 }

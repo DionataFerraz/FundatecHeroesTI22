@@ -6,6 +6,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/purple_700"
         tools:context=".login.view.LoginActivity">
 
         <ImageView
@@ -73,6 +74,7 @@
             android:layout_height="wrap_content"
             android:text="@string/new_here"
             android:textSize="18sp"
+            android:textColor="@color/white"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
