@@ -43,6 +43,8 @@ class LoginActivity : AppCompatActivity() {
                 binding.email.text.toString(),
                 binding.password.text.toString()
             )
+
+            startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
         }
     }
 
