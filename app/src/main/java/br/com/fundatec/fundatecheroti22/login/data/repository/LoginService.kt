@@ -10,14 +10,6 @@ interface LoginService {
 
     @POST("/api/login")
     suspend fun createUser(
-        @Body loginRequest: LoginRequest
-    ): Response<LoginResponse>
-}
-
-interface HomeService {
-
-    @POST("/api/list")
-    suspend fun createUser(
-        @Body loginRequest: LoginRequest
+        @Body loginRequest: LoginRequest,
     ): Response<LoginResponse>
 }

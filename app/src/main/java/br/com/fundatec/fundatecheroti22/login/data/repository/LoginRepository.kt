@@ -5,7 +5,6 @@ import br.com.fundatec.fundatecheroti22.login.data.LoginRequest
 import br.com.fundatec.fundatecheroti22.network.RetrofitNetworkClient
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import java.util.logging.Handler
 
 class LoginRepository {
     private val repository = RetrofitNetworkClient.createNetworkClient(
