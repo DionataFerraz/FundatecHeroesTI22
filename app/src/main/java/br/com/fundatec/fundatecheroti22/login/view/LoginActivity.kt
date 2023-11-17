@@ -24,6 +24,8 @@ class LoginActivity : AppCompatActivity() {
         configButtonLogin()
         configNewHereButton()
 
+        this.applicationContext
+
         viewModel.state.observe(this) {
             when (it) {
                 is LoginViewState.Success -> TODO()
@@ -33,6 +35,8 @@ class LoginActivity : AppCompatActivity() {
                     showEmailError()
                 LoginViewState.ShowPasswordError ->
                     showPasswordError()
+                LoginViewState.ShowHomeScreen ->
+                    startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
             }
         }
     }
@@ -43,8 +47,6 @@ class LoginActivity : AppCompatActivity() {
                 binding.email.text.toString(),
                 binding.password.text.toString()
             )
-
-            startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
         }
     }
 
