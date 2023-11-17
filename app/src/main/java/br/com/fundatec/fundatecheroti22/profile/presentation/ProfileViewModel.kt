@@ -16,7 +16,6 @@ class ProfileViewModel : ViewModel() {
     private val useCase by lazy {
         LoginUseCase()
     }
-
     fun validateInputs(name: String?, email: String?, password: String?) {
         if (name.isNullOrBlank()) {
             viewState.value = ProfileViewState.ShowNameError

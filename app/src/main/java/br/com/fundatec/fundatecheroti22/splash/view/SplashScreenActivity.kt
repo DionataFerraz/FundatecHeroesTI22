@@ -10,8 +10,8 @@ import br.com.fundatec.fundatecheroti22.R
 import br.com.fundatec.fundatecheroti22.home.view.HomeActivity
 import br.com.fundatec.fundatecheroti22.login.view.LoginActivity
 import br.com.fundatec.fundatecheroti22.profile.presentation.ProfileViewModel
-import br.com.fundatec.fundatecheroti22.splash.view.presentation.SplashViewModel
-import br.com.fundatec.fundatecheroti22.splash.view.presentation.model.SplashViewState
+import br.com.fundatec.fundatecheroti22.splash.presentation.SplashViewModel
+import br.com.fundatec.fundatecheroti22.splash.presentation.model.SplashViewState
 
 private const val DELAY_SHOW_SCREEN = 3000L
 
