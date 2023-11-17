@@ -5,6 +5,7 @@
     <string name="e_mail">E-mail</string>
     <string name="password">Senha</string>
     <string name="login">Login</string>
+    <string name="login_error">Erro ao fazer login! Tente novamente mais tarde!!!</string>
     <string name="create_user">Criar usuário</string>
     <string name="new_here">Novo por aqui?</string>
     <string name="email_error">Digite um email valido</string>
