@@ -25,17 +25,21 @@ class ProfileViewModel : ViewModel() {
         } else if (password.isNullOrBlank()) {
             viewState.value = ProfileViewState.ShowPasswordError
         } else {
-            viewModelScope.launch {
-                val isSuccess = useCase.createUser(
-                    name = name,
-                    email = email,
-                    password = password,
-                )
-                if (isSuccess) {
-                    viewState.value = ProfileViewState.Success
-                } else {
-                    viewState.value = ProfileViewState.Error
-                }
+            createUser(name = name, email = email, password = password)
+        }
+    }
+
+    private fun createUser(name: String, email: String, password: String) {
+        viewModelScope.launch {
+            val isSuccess = useCase.createUser(
+                name = name,
+                email = email,
+                password = password,
+            )
+            if (isSuccess) {
+                viewState.value = ProfileViewState.Success
+            } else {
+                viewState.value = ProfileViewState.Error
             }
         }
     }

@@ -1,13 +1,10 @@
 package br.com.fundatec.fundatecheroti22.profile.view
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import br.com.fundatec.fundatecheroti22.R
-import br.com.fundatec.fundatecheroti22.databinding.ActivityLoginBinding
 import br.com.fundatec.fundatecheroti22.databinding.ActivityProfileBinding
-import br.com.fundatec.fundatecheroti22.login.presentation.model.LoginViewState
 import br.com.fundatec.fundatecheroti22.profile.presentation.ProfileViewModel
 import br.com.fundatec.fundatecheroti22.profile.presentation.model.ProfileViewState
 import com.google.android.material.snackbar.Snackbar
