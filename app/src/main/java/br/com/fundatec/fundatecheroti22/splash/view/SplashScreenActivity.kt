@@ -9,7 +9,6 @@ import androidx.activity.viewModels
 import br.com.fundatec.fundatecheroti22.R
 import br.com.fundatec.fundatecheroti22.home.view.HomeActivity
 import br.com.fundatec.fundatecheroti22.login.view.LoginActivity
-import br.com.fundatec.fundatecheroti22.profile.presentation.ProfileViewModel
 import br.com.fundatec.fundatecheroti22.splash.presentation.SplashViewModel
 import br.com.fundatec.fundatecheroti22.splash.presentation.model.SplashViewState
 

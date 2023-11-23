@@ -1,13 +1,13 @@
 package br.com.fundatec.fundatecheroti22.splash.domain
 
-import br.com.fundatec.fundatecheroti22.login.data.repository.LoginRepository
+import br.com.fundatec.fundatecheroti22.login.data.repository.LoginRepositoryImpl
 import java.util.Date
 import java.util.concurrent.TimeUnit
 
 private const val MINUTES_TO_CACHE = 15
 
 class IsValidCacheUseCase {
-    private val repository by lazy { LoginRepository() }
+    private val repository by lazy { LoginRepositoryImpl() }
 
     suspend fun isValidCache(): Boolean {
         val cacheDate = repository.getDateCache() ?: return false

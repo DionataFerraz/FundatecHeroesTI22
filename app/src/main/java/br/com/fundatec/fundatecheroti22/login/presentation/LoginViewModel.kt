@@ -9,11 +9,9 @@ import br.com.fundatec.fundatecheroti22.login.domain.isValidEmail
 import br.com.fundatec.fundatecheroti22.login.presentation.model.LoginViewState
 import kotlinx.coroutines.launch
 
-class LoginViewModel : ViewModel() {
-
-    private val useCase by lazy {
-        LoginUseCase()
-    }
+class LoginViewModel(
+    private val useCase: LoginUseCase
+) : ViewModel() {
 
     private val viewState: MutableLiveData<LoginViewState> = MutableLiveData()
     val state: LiveData<LoginViewState> = viewState
@@ -26,7 +24,7 @@ class LoginViewModel : ViewModel() {
             return
         }
 
-        if (password.isNullOrBlank() || password.length < 16) {
+        if (password.isNullOrBlank() || password.length < 8) {
             viewState.value = LoginViewState.ShowPasswordError
             return
         }

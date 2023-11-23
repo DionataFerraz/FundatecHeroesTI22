@@ -2,17 +2,17 @@ package br.com.fundatec.fundatecheroti22.profile.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.viewModels
 import br.com.fundatec.fundatecheroti22.R
 import br.com.fundatec.fundatecheroti22.databinding.ActivityProfileBinding
 import br.com.fundatec.fundatecheroti22.profile.presentation.ProfileViewModel
 import br.com.fundatec.fundatecheroti22.profile.presentation.model.ProfileViewState
 import com.google.android.material.snackbar.Snackbar
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ProfileActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityProfileBinding
-    private val viewModel: ProfileViewModel by viewModels()
+    private val viewModel: ProfileViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

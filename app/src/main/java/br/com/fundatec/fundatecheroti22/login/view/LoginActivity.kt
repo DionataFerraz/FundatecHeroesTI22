@@ -3,7 +3,6 @@ package br.com.fundatec.fundatecheroti22.login.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.viewModels
 import br.com.fundatec.fundatecheroti22.R
 import br.com.fundatec.fundatecheroti22.databinding.ActivityLoginBinding
 import br.com.fundatec.fundatecheroti22.gone
@@ -13,10 +12,11 @@ import br.com.fundatec.fundatecheroti22.login.presentation.model.LoginViewState
 import br.com.fundatec.fundatecheroti22.profile.view.ProfileActivity
 import br.com.fundatec.fundatecheroti22.visible
 import com.google.android.material.snackbar.Snackbar
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
-    private val viewModel: LoginViewModel by viewModels()
+    private val viewModel: LoginViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
